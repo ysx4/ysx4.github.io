@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Writing
+title: 流水帳 - 思忆漫长而你要与我虚度时光
 ---
 <ul class="posts">
   {% for post in site.posts %}
