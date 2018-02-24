@@ -3,23 +3,35 @@ layout: page
 title: Photography
 image: yang1.jpg
 ---
-<ul class="photography">
-  {% for photography in site.photography %}
+{% for post in paginator.posts %}
+<div class="posts">
+  <h4>
+    <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
+  </h4>
+  {% if post.image %}
+  <div class="thumbnail-container">
+    <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
+  </div>
+  {% endif %}
+  <p>
+    {{ post.content | strip_html | truncate: 100 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+  </p>
+</div>
+{% endfor %}
 
-    {% unless photography.next %}
-      <h3>{{ photography.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year %}{{ photography.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ photography.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3>{{ photography.date | date: '%Y' }}</h3>
-      {% endif %}
-    {% endunless %}
-
-    <li itemscope>
-      <a href="{{ site.github.url }}{{ photography.url }}">{{ photography.title }}</a>
-      <p class="photography-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ photography.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
-    </li>
-
-  {% endfor %}
-</ul>
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-button pagination-active" href="{{ site.github.url }}{{ paginator.next_page_path }}" class="next">{{ site.data.settings.pagination.previous_page }}</a>
+  {% else %}
+    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
+  {% else %}
+    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
+  {% endif %}
+</div>
+{% endif %}
