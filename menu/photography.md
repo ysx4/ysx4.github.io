@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Photography
-image: yang1.JPG
+image: yang1.jpg
 ---
 <ul class="photography">
   {% for photography in site.photography %}

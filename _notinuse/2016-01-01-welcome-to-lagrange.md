@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to Lagrange!"
 author: "Paul Le"
-categories: journal
+categories: techy
 tags: [documentation,sample]
 image: mountains.jpg
 ---

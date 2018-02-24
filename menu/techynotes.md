@@ -1,24 +1,24 @@
 ---
 layout: page
-title: Techy Notes
+title: Techy Notes - Talk is cheap, don't be a cheap chatty asshole
 ---
-<ul class="techynotes">
-  {% for techynotes in site.techynotes %}
-
-    {% unless techynotes.next %}
-      <h3>{{ techynotes.date | date: '%Y' }}</h3>
+<ul class="posts">
+  {% for post in site.posts %}
+    {% if post.techy %}
+    {% unless post.next %}
+      <h3>{{ post.date | date: '%Y' }}</h3>
     {% else %}
-      {% capture year %}{{ techynotes.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ techynotes.next.date | date: '%Y' }}{% endcapture %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
       {% if year != nyear %}
-        <h3>{{ techynotes.date | date: '%Y' }}</h3>
+        <h3>{{ post.date | date: '%Y' }}</h3>
       {% endif %}
     {% endunless %}
 
     <li itemscope>
-      <a href="{{ site.github.url }}{{ techynotes.url }}">{{ techynotes.title }}</a>
-      <p class="techynotes-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ techynotes.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
+      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
+      <p class="post-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
     </li>
-
+    {% endif %}
   {% endfor %}
 </ul>
