@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Techy Notes - Talk is cheap
+title: 消肿 - 人生几度秋凉
 ---
 <ul class="posts">
   {% for post in site.posts %}
-    {% if post.techy %}
+    {% if post.xiaozhong %}
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>
     {% else %}

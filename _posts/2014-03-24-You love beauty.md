@@ -5,6 +5,7 @@ author: "看电影的Yang"
 categories: journal
 tags: [影评]
 image: ysl.jpg
+xiaozhong: true
 ---
 在看布达佩斯大饭店的时候看到Yves Saint Laurent的预告，直到今天看完YSL仍不能执笔写布达佩斯的影评，因为不够把握。但是这部电影，让我想起了高中时候读的一首诗，大概意思是，“我是一位贫穷的艺术家，家里没有像样的桌子，但我给自己买了一架精致的咖啡壶。”
 

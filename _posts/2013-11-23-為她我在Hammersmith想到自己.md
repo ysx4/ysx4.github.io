@@ -5,6 +5,7 @@ author: "看电影的Yang"
 categories: journal
 tags: [影评]
 image: philomena.jpg
+xiaozhong: true
 ---
 就像是看生活，俗套，笑中帶淚。
 

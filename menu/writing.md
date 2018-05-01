@@ -14,7 +14,7 @@ title: 流水帳 - 思忆漫长而你要与我虚度时光
       {% endif %}
       
     {% endunless %}
-    {% unless post.techy %}
+    {% unless post.techy or post.xiaozhong%}
     <li itemscope>
       <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
       <p class="post-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
