@@ -14,10 +14,10 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github', link: 'https://www.github.com/youngsonger'}
+- {icon: 'github', link: 'https://www.github.com/ysx4'}
 - {icon: 'instagram', link: 'https://www.instagram.com/ygggg_at_ins/'}
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/yang-song-12678438/'}
-- {icon: 'envelope', link: 'mailto:youngsonger@gmail.com'}
+- {icon: 'envelope', link: 'mailto:youngsonger@hotmail.com'}
 #- {icon: 'rss-square', link: 'feed.xml'}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
 
