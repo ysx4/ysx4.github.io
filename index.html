@@ -3,40 +3,30 @@ layout: default
 title: Home
 ---
 
-<div class="yang_welcome">
-  <img src="{{ site.github.url }}/assets/img/yang_welcome.jpg">
+<div class="yang_welcome" style="margin-bottom: var(--spacing-lg);">
+  <img src="{{ "assets/img/yang_welcome.jpg" | relative_url }}" alt="Welcome" style="width: 100%; border-radius: 8px;">
 </div>
 
+<ul class="post-list">
+  {% for post in paginator.posts %}
+  <li class="post-item">
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
+  </li>
+  {% endfor %}
+</ul>
 
-<!-- {% for post in paginator.posts %}
-<div class="posts">
-  <h4>
-    <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-  </h4>
-  {% if post.image %}
-  <div class="thumbnail-container">
-    <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
-  </div>
-  {% endif %}
-  <p>
-    {{ post.content | strip_html | truncate: 100 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
-  </p>
-</div>
-{% endfor %}
- -->
-<!-- Pagination links -->
-<!-- {% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active" href="{{ site.github.url }}{{ paginator.next_page_path }}" class="next">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
+<!-- Pagination -->
+{% if paginator.total_pages > 1 %}
+<div style="margin-top: var(--spacing-lg); text-align: center;">
   {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
+  <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-button">&laquo; Newer</a>
+  {% endif %}
+  <span style="margin: 0 10px; color: var(--text-secondary);">Page {{ paginator.page }} of {{ paginator.total_pages
+    }}</span>
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-button">Older &raquo;</a>
   {% endif %}
 </div>
-{% endif %} -->
+{% endif %}
