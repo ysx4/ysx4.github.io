@@ -22,7 +22,7 @@
   --spacing-lg: 4rem;
 
   /* Layout */
-  --container-width: 800px;
+  --container-width: 1000px;
   --header-height: 70px;
 }
 
@@ -68,6 +68,7 @@ a:hover {
 
 img {
   max-width: 100%;
+  width: 70%;
   height: auto;
   border-radius: 8px;
   display: block;
@@ -274,6 +275,7 @@ pre code {
     transform: translateY(0);
   }
 }
+
 /* Related Posts */
 .related h1 {
   font-size: 0.9rem;

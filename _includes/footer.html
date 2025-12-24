@@ -2,7 +2,7 @@
   <div class="social-links">
     {% for item in site.data.settings.social %}
     <a href="{{ item.link }}" target="_blank" aria-label="{{ item.icon }}">
-      <i class="fab fa-{{ item.icon }}"></i>
+      <i class="{% if item.icon == 'envelope' %}fas{% else %}fab{% endif %} fa-{{ item.icon }}"></i>
     </a>
     {% endfor %}
   </div>
